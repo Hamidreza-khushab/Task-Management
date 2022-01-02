@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, FloatingLabel } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 
 const Taskinput = ({ addTask }) => {
@@ -16,6 +16,16 @@ const Taskinput = ({ addTask }) => {
                     value={title}
                     onChange={(event) => setTitle(event.target.value)}
                 />
+                <br />
+                <FloatingLabel controlId="floatingSelect" label="Select the contact">
+                    <Form.Select aria-label="Floating label">
+                        <option>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </Form.Select>
+                </FloatingLabel>
+                <br />
                 <Form.Label>Estimate the time to do</Form.Label>
                 <Form.Control
                     type="date"
