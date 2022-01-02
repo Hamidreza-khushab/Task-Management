@@ -7,7 +7,7 @@ const Showcontact = ({ contacts }) => {
             {contacts.map((element) => (
                 <Col id={element.id}>
                     <Card >
-                        <Card.Body style={{ overflow: 'auto', height: '150px' }}>
+                        <Card.Body >
                             <Card.Title>{element.name}</Card.Title>
                             <Card.Text>
                                 <label>Tel:</label>
@@ -16,10 +16,6 @@ const Showcontact = ({ contacts }) => {
                             <Card.Text>
                                 <label>Mob:</label>
                                 {element.mob}
-                            </Card.Text>
-                            <Card.Text>
-                                <label>Email:</label>
-                                {element.email}
                             </Card.Text>
                             <Card.Text>
                                 <label>Email:</label>

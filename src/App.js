@@ -7,6 +7,7 @@ import './App.css';
 import Showtask from "./components/showtask/Showtask";
 import CurrentDate from "./components/Currentdate/CurrentDate";
 import Showcontact from "./components/showcontact/Showcontact";
+import Footer from "./components/fotter/Footer";
 
 function App() {
 
@@ -47,7 +48,7 @@ function App() {
         addContact={(id, name, address, email, tel, mob) => addContact(id, name, address, email, tel, mob)}
       />
       <br></br>
-      <Container>
+      <Container style={{ overflow: 'auto', height: '80vh' }} >
         <Card className="text-center"  >
           <Card.Header bg='success' >
             <CurrentDate />
@@ -66,7 +67,7 @@ function App() {
           <Card.Header>
             <h3>Phone Book</h3>
           </Card.Header>
-          <Card.Body style={{ overflow: 'auto', height: '32vh' }}>
+          <Card.Body style={{ overflow: 'auto', height: '40vh' }}>
             <Card.Text>
               <Showcontact
                 contacts={contacts}
@@ -75,6 +76,7 @@ function App() {
           </Card.Body>
         </Card>
       </Container>
+      <Footer />
     </>
 
   );
