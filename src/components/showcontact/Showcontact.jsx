@@ -3,7 +3,7 @@ import { Card, Row, Col } from "react-bootstrap";
 
 const Showcontact = ({ contacts }) => {
     const sortContacts = contacts.sort((a, b) => {
-        if (a.name > b.name) { return 1 }
+        if (a.name.toLowerCase() > b.name.toLowerCase()) { return 1 }
         else { return -1 };
     })
     return (
@@ -21,7 +21,7 @@ const Showcontact = ({ contacts }) => {
                                 <label>Mob:</label>
                                 {element.mob}
                             </Card.Text>
-                            <Card.Text>
+                            <Card.Text style={{ overflow: 'hidden', height: '20px' }}>
                                 <label>Email:</label>
                                 {element.email}
                             </Card.Text>

@@ -8,9 +8,13 @@ const Showtask = ({ tasks, setTaskDone }) => {
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     let yyyy = today.getFullYear();
     today = yyyy + '-' + mm + '-' + dd;
+    const sortTasks = tasks.sort((a, b) => {
+        if (a.estimateDo > b.estimateDo) { return 1 }
+        else { return -1 };
+    })
     return (
         <Row xs={1} md={4} className="g-3">
-            {tasks.map((element) => (
+            {sortTasks.map((element) => (
                 <Col id={element.id}>
                     <Card bg={element.estimateDo <= today ? 'warning' : 'light'}>
                         <Card.Body style={{ overflow: 'auto', height: '150px' }}>
