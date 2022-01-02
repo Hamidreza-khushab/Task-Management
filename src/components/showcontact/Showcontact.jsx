@@ -6,8 +6,8 @@ const Showcontact = ({ contacts }) => {
         <Row xs={1} md={4} className="g-3">
             {contacts.map((element) => (
                 <Col id={element.id}>
-                    <Card >
-                        <Card.Body >
+                    <Card bg='success'>
+                        <Card.Body>
                             <Card.Title>{element.name}</Card.Title>
                             <Card.Text>
                                 <label>Tel:</label>
@@ -19,6 +19,10 @@ const Showcontact = ({ contacts }) => {
                             </Card.Text>
                             <Card.Text>
                                 <label>Email:</label>
+                                {element.email}
+                            </Card.Text>
+                            <Card.Text>
+                                <label>Address:</label>
                                 {element.address}
                             </Card.Text>
                         </Card.Body>
