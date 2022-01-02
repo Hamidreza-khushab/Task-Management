@@ -39,6 +39,7 @@ function App() {
       },
     ]);
   };
+  // localStorage(contacts[0].id, contacts[0])
   const setTaskDone = (id) => {
     const editiedTodos = tasks.filter(element => element.id !== id);
     setTasks(editiedTodos);
@@ -70,7 +71,7 @@ function App() {
           <Card.Header>
             <h3>Phone Book</h3>
           </Card.Header>
-          <Card.Body style={{ overflow: 'auto', height: '40vh' }}>
+          <Card.Body style={{ overflow: 'auto', height: '32vh' }}>
             <Card.Text>
               <Showcontact
                 contacts={contacts}
