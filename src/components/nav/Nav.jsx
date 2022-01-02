@@ -3,9 +3,11 @@ import { Navbar, Container, Button, Nav, Form, FormControl } from "react-bootstr
 import Contact from '../contact/Contact';
 import Task from '../task/Task'
 
-const Navapp = ({ addTask, addContact, contacts }) => {
+const Navapp = ({ addTask, addContact, contacts, inputWord }) => {
     const [showTask, setshowTask] = useState(false)
     const [showContact, setshowContact] = useState(false)
+    const [word, setWord] = useState()
+
     return (
         <>
             <Navbar bg="info" expand="lg">
@@ -23,11 +25,19 @@ const Navapp = ({ addTask, addContact, contacts }) => {
                         <Form className="d-flex">
                             <FormControl
                                 type="search"
-                                placeholder="Search"
+                                placeholder="Search Phone Book"
                                 className="me-2"
                                 aria-label="Search"
+                                value={word}
+                                onChange={(event) => setWord(event.target.value)}
                             />
-                            <Button variant="outline-dark">Search</Button>
+                            <Button
+                                variant="outline-dark"
+                                onClick={(event) => {
+                                    event.preventDefault();
+                                    inputWord(word.trim())
+                                }}
+                            >Search</Button>
                         </Form>
                     </Navbar.Collapse>
                 </Container>

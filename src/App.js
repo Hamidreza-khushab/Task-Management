@@ -9,6 +9,7 @@ import CurrentDate from "./components/Currentdate/CurrentDate";
 import Showcontact from "./components/showcontact/Showcontact";
 import Footer from "./components/fotter/Footer";
 import useLocalStorage from "./components/locaStorage/useLocalStorag";
+import Search from "./components/srarch/Search";
 
 function App() {
 
@@ -25,7 +26,6 @@ function App() {
       }, ...tasks
     ]);
   };
-  console.log('app person ', tasks);
   const [contacts, setContacts] = useLocalStorage('contacts', []);
   const addContact = (id, name, address, email, tel, mob) => {
     setContacts([
@@ -40,7 +40,18 @@ function App() {
       },
     ]);
   };
-  // localStorage(contacts[0].id, contacts[0])
+  const [showSerch, setshowSearch] = useState(false)
+
+  const [search, setSearch] = useState([{ word: 'none' }])
+  const inputWord = (word) => {
+    setSearch([...search, { word: word }])
+    if (search[search.length === 0 ? 0 : search.length - 1].word === word)
+      setshowSearch(true)
+  }
+
+
+
+
   const setTaskDone = (id) => {
     const editiedTodos = tasks.filter(element => element.id !== id);
     setTasks(editiedTodos);
@@ -51,6 +62,7 @@ function App() {
         contacts={contacts}
         addTask={(id, title, person, estimateDo, description, date) => addTask(id, title, person, estimateDo, description, date)}
         addContact={(id, name, address, email, tel, mob) => addContact(id, name, address, email, tel, mob)}
+        inputWord={(word) => inputWord(word)}
       />
       <br></br>
       <Container style={{ overflow: 'auto', height: '80vh' }} >
@@ -80,6 +92,12 @@ function App() {
             </Card.Text>
           </Card.Body>
         </Card>
+        <Search
+          search={search}
+          contacts={contacts}
+          showSerch={showSerch}
+          hideModasearch={() => setshowSearch(false)}
+        />
       </Container>
       <Footer />
     </>
