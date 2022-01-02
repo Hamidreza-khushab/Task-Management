@@ -12,17 +12,19 @@ import Footer from "./components/fotter/Footer";
 function App() {
 
   const [tasks, setTasks] = useState([]);
-  const addTask = (id, title, estimateDo, description, date) => {
+  const addTask = (id, title, person, estimateDo, description, date) => {
     setTasks([
       {
         id: id,
         title: title,
+        person: person,
         estimateDo: estimateDo,
         description: description,
         date: date,
       }, ...tasks
     ]);
   };
+  console.log('app person ', tasks);
   const [contacts, setContacts] = useState([]);
   const addContact = (id, name, address, email, tel, mob) => {
     setContacts([
@@ -44,7 +46,8 @@ function App() {
   return (
     <>
       <Navapp
-        addTask={(id, title, estimateDo, description, date) => addTask(id, title, estimateDo, description, date)}
+        contacts={contacts}
+        addTask={(id, title, person, estimateDo, description, date) => addTask(id, title, person, estimateDo, description, date)}
         addContact={(id, name, address, email, tel, mob) => addContact(id, name, address, email, tel, mob)}
       />
       <br></br>

@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
 import Taskinput from '../taskinputForm/Taskinput';
 
-const Task = ({ addTask, showTask, hideModaltask }) => {
+const Task = ({ addTask, showTask, hideModaltask, contacts }) => {
     return (
 
         <Modal
@@ -14,7 +14,8 @@ const Task = ({ addTask, showTask, hideModaltask }) => {
             </Modal.Header>
             <Modal.Body>
                 <Taskinput
-                    addTask={(id, title, estimateDo, description, date) => addTask(id, title, estimateDo, description, date)}
+                    contacts={contacts}
+                    addTask={(id, title, person, estimateDo, description, date) => addTask(id, title, person, estimateDo, description, date)}
                 />
             </Modal.Body>
         </Modal >

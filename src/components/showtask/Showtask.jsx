@@ -8,7 +8,7 @@ const Showtask = ({ tasks, setTaskDone }) => {
                 <Col id={element.id}>
                     <Card >
                         <Card.Body style={{ overflow: 'auto', height: '150px' }}>
-                            <Card.Title>{element.title}</Card.Title>
+                            <Card.Title>{element.title} with {element.person}</Card.Title>
                             <Card.Text>
                                 <label>Estimated end of work:</label>
                                 {element.estimateDo}

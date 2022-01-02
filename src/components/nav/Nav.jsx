@@ -3,7 +3,7 @@ import { Navbar, Container, Button, Nav, Form, FormControl } from "react-bootstr
 import Contact from '../contact/Contact';
 import Task from '../task/Task'
 
-const Navapp = ({ addTask, addContact }) => {
+const Navapp = ({ addTask, addContact, contacts }) => {
     const [showTask, setshowTask] = useState(false)
     const [showContact, setshowContact] = useState(false)
     return (
@@ -34,8 +34,9 @@ const Navapp = ({ addTask, addContact }) => {
             </Navbar >
             <Task
                 showTask={showTask}
+                contacts={contacts}
                 hideModaltask={() => setshowTask(false)}
-                addTask={(id, title, estimateDo, description, date) => addTask(id, title, estimateDo, description, date)}
+                addTask={(id, title, person, estimateDo, description, date) => addTask(id, title, person, estimateDo, description, date)}
             />
             <Contact
                 showContact={showContact}
