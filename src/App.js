@@ -15,15 +15,15 @@ function App() {
 
   const [tasks, setTasks] = useLocalStorage('tasks', []);
   const addTask = (id, title, person, estimateDo, description, date) => {
-    setTasks([
-      {
-        id: id,
-        title: title,
-        person: person,
-        estimateDo: estimateDo,
-        description: description,
-        date: date,
-      }, ...tasks
+    setTasks([...tasks,
+    {
+      id: id,
+      title: title,
+      person: person,
+      estimateDo: estimateDo,
+      description: description,
+      date: date,
+    },
     ]);
   };
   const [contacts, setContacts] = useLocalStorage('contacts', []);
@@ -39,6 +39,7 @@ function App() {
         mob: mob,
       },
     ]);
+
   };
   const [showSerch, setshowSearch] = useState(false)
 

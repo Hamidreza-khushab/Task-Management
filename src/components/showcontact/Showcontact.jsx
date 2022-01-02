@@ -2,9 +2,13 @@ import React from 'react'
 import { Card, Row, Col } from "react-bootstrap";
 
 const Showcontact = ({ contacts }) => {
+    const sortContacts = contacts.sort((a, b) => {
+        if (a.name > b.name) { return 1 }
+        else { return -1 };
+    })
     return (
         <Row xs={1} md={4} className="g-3">
-            {contacts.map((element) => (
+            {sortContacts.map((element) => (
                 <Col id={element.id}>
                     <Card bg='success'>
                         <Card.Body>
