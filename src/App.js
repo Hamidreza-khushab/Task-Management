@@ -8,10 +8,11 @@ import Showtask from "./components/showtask/Showtask";
 import CurrentDate from "./components/Currentdate/CurrentDate";
 import Showcontact from "./components/showcontact/Showcontact";
 import Footer from "./components/fotter/Footer";
+import useLocalStorage from "./components/locaStorage/useLocalStorag";
 
 function App() {
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useLocalStorage('tasks', []);
   const addTask = (id, title, person, estimateDo, description, date) => {
     setTasks([
       {
@@ -25,7 +26,7 @@ function App() {
     ]);
   };
   console.log('app person ', tasks);
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useLocalStorage('contacts', []);
   const addContact = (id, name, address, email, tel, mob) => {
     setContacts([
       ...contacts,

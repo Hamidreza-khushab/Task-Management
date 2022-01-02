@@ -7,8 +7,7 @@ const CurrentDate = () => {
     const currentDateTime = moment()
 
     return (
-        <Moment format='D MMM YYYY, h:mm:ss a'>{currentDateTime}</Moment>
-
+        <Moment format='D MMM YYYY'>{currentDateTime}</Moment>
     )
 }
 
