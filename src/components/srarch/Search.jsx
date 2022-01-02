@@ -15,7 +15,7 @@ const Search = ({ search, contacts, showSerch, hideModasearch }) => {
                 {
                     contacts.map(contact => {
                         if (contact.name === search[search.length - 1].word) {
-                            return <Card className="text-center">
+                            return <Card className="text-center" bg='warning'>
                                 <Card.Header>Successful search</Card.Header>
                                 <Card.Body>
                                     <Card.Title>{contact.name}</Card.Title>
