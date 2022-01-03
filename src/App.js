@@ -69,7 +69,8 @@ function App() {
       <Container style={{ overflow: 'auto', height: '80vh' }} >
         <Card className="text-center"  >
           <Card.Header bg='success' >
-            <CurrentDate />
+            <h3>  <CurrentDate /></h3>
+
           </Card.Header>
           <Card.Body style={{ overflow: 'auto', height: '32vh' }}>
             <Card.Text>
